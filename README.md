@@ -1,9 +1,33 @@
-# Piscine
-42 tokyo piscine
-
-```
 .
 ├── BSQ
+│   ├── final
+│   │   ├── Makefile
+│   │   ├── includes
+│   │   │   ├── bsqstd.h
+│   │   │   └── bsqstd.h.gch
+│   │   ├── main.c
+│   │   ├── resources
+│   │   │   ├── gen_map.pl
+│   │   │   ├── objects.mk
+│   │   │   └── sources.mk
+│   │   ├── sample
+│   │   │   ├── example01_file
+│   │   │   ├── example02_file
+│   │   │   ├── example03_file
+│   │   │   ├── example04_file
+│   │   │   └── example05_file
+│   │   └── util
+│   │       ├── a.out
+│   │       ├── ft_convert_map.c
+│   │       ├── ft_init.c
+│   │       ├── ft_input.c
+│   │       ├── ft_length.c
+│   │       ├── ft_print_map.c
+│   │       ├── ft_putstr.c
+│   │       ├── ft_search.c
+│   │       ├── ft_set_map.c
+│   │       ├── ft_strcpy.c
+│   │       └── ft_strdup.c
 │   ├── first_day
 │   │   ├── example.c
 │   │   ├── ft.h
@@ -11,14 +35,10 @@
 │   └── second_day
 │       ├── a.out
 │       ├── example.c
-│       ├── example01_file
-│       ├── example02_file
-│       ├── example03_file
-│       ├── example04_file
-│       ├── example05_file
 │       ├── ft.h
 │       ├── ft.h.gch
-│       └── main.c
+│       ├── main.c
+│       └── resource
 ├── C00
 │   ├── ex00
 │   │   └── ft_putchar.c
@@ -129,8 +149,10 @@
 │   │   └── ft_is_prime.c
 │   ├── ex07
 │   │   └── ft_find_next_prime.c
-│   └── ex08
-│       └── ft_ten_queens_puzzule.c
+│   ├── ex08
+│   │   └── ft_ten_queens_puzzule.c
+│   └── ex0808
+│       └── ft_ten_queens_puzzle.c
 ├── C06
 │   ├── ex00
 │   │   └── ft_print_program_name.c
@@ -141,19 +163,22 @@
 │   └── ex03
 │       └── ft_sort_params.c
 ├── C07
-│   ├── ex00
-│   │   └── ft_strdup.c
-│   ├── ex01
-│   │   └── ft_range.c
-│   ├── ex02
-│   │   └── ft_ultimate_range.c
-│   ├── ex03
-│   │   └── ft_strjoin.c
-│   ├── ex04
-│   │   ├── ft_convert_base.c
-│   │   └── ft_convert_base2.c
-│   └── ex05
-│       └── ft_split.c
+│   └── try01
+│       ├── ex00
+│       │   └── ft_strdup.c
+│       ├── ex01
+│       │   └── ft_range.c
+│       ├── ex02
+│       │   └── ft_ultimate_range.c
+│       ├── ex03
+│       │   └── ft_strjoin.c
+│       ├── ex04
+│       │   ├── a.out
+│       │   ├── ft_convert_base.c
+│       │   ├── ft_convert_base2.c
+│       │   └── main.c
+│       └── ex05
+│           └── ft_split.c
 ├── C08
 │   ├── ex00
 │   │   └── ft.h
@@ -216,7 +241,31 @@
 │   └── ex07
 │       ├── a.out
 │       └── ft_advanced_sort_string_tab.c
-├── README.md
+├── C12
+│   ├── ex00
+│   │   ├── a.out
+│   │   ├── ft_create_elem.c
+│   │   └── ft_list.h
+│   ├── ex01
+│   │   ├── a.out
+│   │   ├── ft_list.h
+│   │   └── ft_list_push_front.c
+│   └── ex02
+│       ├── a.out
+│       ├── ft_list.h
+│       └── ft_list_size.c
+├── C13
+│   ├── ex00
+│   │   ├── btree_create_node.c
+│   │   └── ft_btree.h
+│   └── ex01
+│       ├── a.out
+│       ├── btree_apply_prefix.c
+│       └── ft_btree.h
+├── FinalExamPreparation
+│   ├── Makefile
+│   ├── ft_print_combn.c
+│   └── ft_split.c
 ├── RUSH00
 │   └── ex00
 │       ├── ft_putchar.c
@@ -300,4 +349,4 @@
     │   └── r_dwssap.sh
     └── ex08
         └── add_chelou.sh
-```
+
