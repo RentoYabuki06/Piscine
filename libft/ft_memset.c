@@ -1,17 +1,17 @@
 #include <stddef.h>
 
-void *ft_memset(void *s, int c, size_t n)
+void *ft_memset(void *b, int c, size_t len)
 {
-    unsigned char *p = s;
+    unsigned char *p = b;
     unsigned char uc = c;
 
-    while (n > 0)
+    while (len > 0)
 	{
         *p++ = uc;
-		n--;
+		len--;
     }
 
-    return s;
+    return b;
 }
 
 // #include <stddef.h>
