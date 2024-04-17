@@ -2,8 +2,14 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	unsigned char *pdst = dst;
-	const unsigned char *psrc = src;
+	unsigned char *pdst;
+	const unsigned char *psrc;
+    size_t i;
+
+    i = 0;
+    pdst = dst;
+    psrc = src;
+
 	if (src == NULL)
 		return dst;
 
@@ -12,17 +18,19 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	{
 		pdst += len - 1;
 		psrc += len - 1;
-		for (size_t i = 0; i < len; i++)
+		while (i < len)
 		{
 			*(pdst--) = *(psrc--);
+            i++;
 		}
 	}
 	// オーバーラップしていない場合
 	else
     {
-        for (size_t i = 0; i < len; i++)
+        while (i < len)
         {
             *(pdst++) = *(psrc++);
+            i++;
         }
     }
     return dst;
