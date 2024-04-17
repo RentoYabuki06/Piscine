@@ -2,9 +2,13 @@
 
 void *ft_memcpy(void *restrict dest, const void *src, size_t n)
 {
-    unsigned char *pdest = dest;
-    const unsigned char *psrc = src;
-    size_t i = 0;
+    unsigned char *pdest;
+    const unsigned char *psrc;
+    size_t i;
+
+    pdest = dest;
+    psrc = src;
+    i = 0;
 
     while (i < n)
     {
