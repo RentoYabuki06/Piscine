@@ -16,7 +16,7 @@ static size_t	ft_numlen(int n)
 	return (len);
 }
 
-char	*ft_strdup(const char *src)
+static char	*ft_strdup(const char *src)
 {
 	int		i;
 	int		len;
