@@ -1,3 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yabukirento <yabukirento@student.42.fr>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/19 14:53:55 by yabukirento       #+#    #+#             */
+/*   Updated: 2024/04/19 14:55:24 by yabukirento      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
 #include <stddef.h>
 
 void *ft_memcpy(void *restrict dest, const void *src, size_t n)

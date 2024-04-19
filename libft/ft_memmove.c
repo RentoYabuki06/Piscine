@@ -1,3 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yabukirento <yabukirento@student.42.fr>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/19 14:53:55 by yabukirento       #+#    #+#             */
+/*   Updated: 2024/04/19 14:55:30 by yabukirento      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
 #include <stddef.h>
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
