@@ -6,7 +6,7 @@
 /*   By: yabukirento <yabukirento@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 14:53:55 by yabukirento       #+#    #+#             */
-/*   Updated: 2024/04/19 14:55:18 by yabukirento      ###   ########.fr       */
+/*   Updated: 2024/04/19 15:53:17 by yabukirento      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	i = 0;
 	ps1 = s1;
 	ps2 = s2;
-	while (ps1 && ps2 && i < n)
+	while (i < n)
 	{
 		if (ps1[i] != ps2[i])
 			return (ps1[i] - ps2[i]);

@@ -6,54 +6,42 @@
 /*   By: yabukirento <yabukirento@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 14:53:55 by yabukirento       #+#    #+#             */
-/*   Updated: 2024/04/19 14:57:19 by yabukirento      ###   ########.fr       */
+/*   Updated: 2024/04/19 19:11:26 by yabukirento      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stddef.h>
-
-static size_t	ft_strlen(const char *str)
-{
-	size_t	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
-
-static size_t	ft_strlcpy(char *restrict dest, const char *restrict src, size_t destsize)
-{
-	size_t	i;
-	size_t	src_len;
-
-	i = 0;
-	src_len = ft_strlen(src);
-	if (destsize == 0)
-		return (src_len);
-	while (i < destsize - 1 && *src != '\0')
-	{
-		*dest = *src;
-		dest ++;
-		src ++;
-		i++;
-	}
-	*dest = '\0';
-	return (src_len);
-}
-
+#include <stdlib.h>
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*ans;
+	size_t	s_len;
+	char	*substr;
 
-	ans = (char *)malloc(sizeof(char) * len + 1);
-	if (!ans)
+	if (!s)
 		return (NULL);
-	ft_strlcpy(ans, s + start, len + 1);
-	return (ans);
+
+	s_len = ft_strlen(s);
+
+	if (start >= s_len)
+	{
+		// startが文字列の長さ以上の場合、空の文字列またはNULLを返す
+		return (ft_strdup(""));
+	}
+
+	// 部分文字列の長さを制限
+	len = (len > s_len - start) ? s_len - start : len;
+
+	// 部分文字列を格納するメモリを割り当て
+	substr = (char *)malloc(sizeof(char) * (len + 1));
+	if (!substr)
+		return (NULL);
+
+	// 部分文字列をコピー
+	ft_strlcpy(substr, s + start, len + 1);
+
+	return (substr);
 }
+
 

@@ -6,7 +6,7 @@
 /*   By: yabukirento <yabukirento@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 14:53:55 by yabukirento       #+#    #+#             */
-/*   Updated: 2024/04/19 14:56:02 by yabukirento      ###   ########.fr       */
+/*   Updated: 2024/04/19 19:03:41 by yabukirento      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,30 @@
 #include <unistd.h>
 #include <stddef.h>
 
-static size_t	ft_strlen(const char *str)
+static size_t	ft_count(char const *s, char c)
 {
 	size_t	i;
+	size_t	count;
+	size_t	flag;
 
 	i = 0;
-	while (str[i])
+	count = 0;
+	flag = -1;
+	while (s[i])
+	{
+		if (s[i] == c && flag == i - 1)
+		{
+			flag = i;
+			count++;
+		}	
 		i++;
-	return (i);
+	}
+	if (s[i - 1] != c)
+		count ++;
+	return (count);
 }
 
-static char	*ft_strdup(char const *src, size_t n)
+static char	*ft_strndup(char const *src, size_t n)
 {
 	size_t	i;
 	char	*dest;
@@ -44,66 +57,36 @@ static char	*ft_strdup(char const *src, size_t n)
 	return (dest);
 }
 
-static char	*ft_strchr(const char *s, int c)
+static void	fill_split(char **ans, char const *s, char c, size_t i)
 {
-	int i;
+	size_t	j;
+	size_t	len;
 
-	i = 0;
+	j = 0;
 	while (s[i])
 	{
-		if (s[i] == c)
-		{
-			return (char *)(s + i);
-		}
-		i++;
+		while (s[i] == c)
+			i++;
+		if (!s[i])
+			break;
+		len = 0;
+		while (s[i + len] && s[i + len] != c)
+			len++;
+		ans[j] = ft_strndup(s + i, len);
+		i += len;
+		j++;
 	}
-	if (s[i] == c)
-		return (char *)(s + i);
-	return ((void *)0);
-}
-
-static size_t	ft_count(char const *s, char c)
-{
-	size_t	i;
-	size_t	count;
-
-	i = 0;
-	count = 0;
-	while (s[i])
-	{
-		if (s[i] == c)
-			count++;
-		i++;
-	}
-	return (count);
+	ans[j] = NULL;
 }
 
 char	**ft_split(char const *s, char c)
 {
-	size_t		i;
-	size_t		j;
-	size_t		len;
 	char	**ans;
 
-	ans = (char **)malloc(sizeof(char *) * (ft_count(s, c) + 2));
+	ans = (char **)malloc(sizeof(char *) * (ft_count(s, c) + 1));
 	if (!ans || !s)
 		return (NULL);
-	i = 0;
-	j = 0;
-	while (s[i])
-	{
-		char *found = ft_strchr(s + i, c);
-		if (found == NULL)
-			len = ft_strlen(s + i);
-		else
-			len = found - (s + i);
-		ans[j] = ft_strdup(s + i, len);
-		i += len;
-		j++;
-		if (s[i])
-			i++;
-	}
-	ans[i] = NULL;
+	fill_split(ans, s, c, 0);
 	return (ans);
 }
 

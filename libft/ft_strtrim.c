@@ -6,60 +6,12 @@
 /*   By: yabukirento <yabukirento@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 14:53:55 by yabukirento       #+#    #+#             */
-/*   Updated: 2024/04/19 14:57:14 by yabukirento      ###   ########.fr       */
+/*   Updated: 2024/04/19 18:23:27 by yabukirento      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stddef.h>
-
-static size_t	ft_strlen(const char *str)
-{
-	size_t	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-
-static char	*ft_strchr(const char *s, int c)
-{
-	int i;
-
-	i = 0;
-	while (s[i])
-	{
-		if (s[i] == c)
-		{
-			return (char *)(s + i);
-		}
-		i++;
-	}
-	if (s[i] == c)
-		return (char *)(s + i);
-	return (NULL);
-}
-
-static size_t	ft_strlcpy(char *restrict dest, const char *restrict src, size_t destsize)
-{
-	size_t	i;
-	size_t	src_len;
-
-	i = 0;
-	src_len = ft_strlen(src);
-	if (destsize == 0)
-		return (src_len);
-	while (i < destsize - 1 && *src != '\0')
-	{
-		*dest = *src;
-		dest ++;
-		src ++;
-		i++;
-	}
-	*dest = '\0';
-	return (src_len);
-}
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
@@ -67,11 +19,13 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	start;
 	char	*ans;
 
+	if (!s1)
+		return NULL;
 	start = 0;
-	end = ft_strlen(s1) - 1;
-	while (ft_strchr(set, s1[start]) && start < end)
+	end = ft_strlen(s1);
+	while (ft_strchr(set, s1[start]) && s1[start] != '\0')
 		start++;
-	while (ft_strchr(set, s1[end]) && end > start)
+	while (ft_strchr(set, s1[end - 1]) && end > start)
 		end--;
 	ans = (char *)malloc(sizeof(char) * (end - start + 1));
 	if (!ans)

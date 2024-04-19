@@ -6,43 +6,12 @@
 /*   By: yabukirento <yabukirento@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 14:53:55 by yabukirento       #+#    #+#             */
-/*   Updated: 2024/04/19 14:56:30 by yabukirento      ###   ########.fr       */
+/*   Updated: 2024/04/19 15:25:29 by yabukirento      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stddef.h>
-
-static size_t	ft_strlen(const char *str)
-{
-	size_t	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
-static size_t	ft_strlcpy(char *restrict dest, const char *restrict src, size_t destsize)
-{
-	size_t	i;
-	size_t	src_len;
-
-	i = 0;
-	src_len = ft_strlen(src);
-	if (destsize == 0)
-		return (src_len);
-	while (i < destsize - 1 && *src != '\0')
-	{
-		*dest = *src;
-		dest ++;
-		src ++;
-		i++;
-	}
-	*dest = '\0';
-	return (src_len);
-}
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
