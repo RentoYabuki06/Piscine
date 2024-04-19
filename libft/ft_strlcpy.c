@@ -12,7 +12,7 @@ static size_t	ft_strlen(const char *str)
 	return (i);
 }
 
-size_t	ft_strlcpy(char *restrict dest, const char *restrict src, size_t destsize)
+size_t	ft_strlcpy(char * dest, const char * src, size_t destsize)
 {
 	size_t	i;
 	size_t	src_len;

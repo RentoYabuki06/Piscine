@@ -12,30 +12,30 @@ static size_t	ft_strlen(const char *str)
 	return (i);
 }
 
-size_t	ft_strlcat(char * restrict dest, const char * restrict src, size_t destsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t	dest_len;
+	size_t	dst_len;
 	size_t	src_len;
 	size_t	i;
 
-	dest_len = ft_strlen(dest);
+	dst_len = ft_strlen(dst);
 	src_len = ft_strlen(src);
 	i = 0;
-	if (destsize == 0)
+	if (dstsize == 0)
 		return (src_len);
-	else if (dest_len < destsize)
+	else if (dst_len < dstsize)
 	{
-		while (src[i] != '\0' && dest_len < destsize - 1)
+		while (src[i] != '\0' && dst_len < dstsize - 1)
 		{
-			dest[dest_len] = src[i];
+			dst[dst_len] = src[i];
 			i++;
-			dest_len++;
+			dst_len++;
 		}
-		dest[dest_len] = '\0';
-		return (dest_len + src_len - i);
+		dst[dst_len] = '\0';
+		return (dst_len + src_len - i);
 	}
 	else
-		return (src_len + destsize);
+		return (src_len + dstsize);
 }
 
 // #include <stdio.h>
