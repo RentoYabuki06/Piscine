@@ -6,7 +6,7 @@
 /*   By: yabukirento <yabukirento@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 14:53:55 by yabukirento       #+#    #+#             */
-/*   Updated: 2024/04/19 19:03:41 by yabukirento      ###   ########.fr       */
+/*   Updated: 2024/04/19 19:32:53 by yabukirento      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,16 +89,3 @@ char	**ft_split(char const *s, char c)
 	fill_split(ans, s, c, 0);
 	return (ans);
 }
-
-// int main()
-// {
-//     char *str = "apple,orange,banana";
-//     char **result = ft_split(str, ',');
-//     int i = 0;
-//     while (result[i] != NULL)
-//     {
-//         printf("%s\n", result[i]);
-//         i++;
-//     }
-//     return 0;
-// }

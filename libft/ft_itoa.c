@@ -6,7 +6,7 @@
 /*   By: yabukirento <yabukirento@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 14:53:55 by yabukirento       #+#    #+#             */
-/*   Updated: 2024/04/19 15:25:36 by yabukirento      ###   ########.fr       */
+/*   Updated: 2024/04/19 19:32:23 by yabukirento      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,16 +56,3 @@ char	*ft_itoa(int n)
 	}
 	return (ans);
 }
-
-// #include <stdio.h>
-
-// int main()
-// {
-//     int num = 12345;
-//     // int num = 2147483647;
-//     // int num = -2147483648;
-//     // int num = -21474836;
-//     char *result = ft_itoa(num);
-//     printf("Result: %s\n", result);
-//     return 0;
-// }

@@ -6,7 +6,7 @@
 /*   By: yabukirento <yabukirento@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 14:53:55 by yabukirento       #+#    #+#             */
-/*   Updated: 2024/04/19 15:26:51 by yabukirento      ###   ########.fr       */
+/*   Updated: 2024/04/19 19:33:32 by yabukirento      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,29 +31,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	str[i] = '\0';
 	return (str);
 }
-
-// // ここからは検証用（コメントアウトして提出）
-// #include <stdio.h>
-
-// char add_one(unsigned int index, char c)
-// {
-//     return c + index;
-// }
-
-// int main()
-// {
-//     char *str = "hello";
-//     char *result = ft_strmapi(str, &add_one);
-    
-//     if (result != NULL)
-//     {
-//         printf("Result: %s\n", result);
-//         free(result); // メモリの解放
-//     }
-//     else
-//     {
-//         printf("Memory allocation failed.\n");
-//     }
-
-//     return 0;
-// }
