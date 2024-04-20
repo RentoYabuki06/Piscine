@@ -10,3 +10,5 @@ C12/ex01/a.out
 C12/ex02/a.out
 libft/a.out
 libft-unit-tests/
+*.o
+libft.a
