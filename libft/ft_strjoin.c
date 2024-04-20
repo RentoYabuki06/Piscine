@@ -6,7 +6,7 @@
 /*   By: yabukirento <yabukirento@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 14:53:55 by yabukirento       #+#    #+#             */
-/*   Updated: 2024/04/19 15:25:29 by yabukirento      ###   ########.fr       */
+/*   Updated: 2024/04/20 16:16:45 by yabukirento      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	len_s1;
 	size_t	len_s2;
 	
+	if (!s1 || !s2)
+		return NULL;
 	len_s1 = ft_strlen(s1);
 	len_s2 = ft_strlen(s2);
 	ans = (char *)malloc(sizeof(char) * (len_s1 + len_s2 + 1));

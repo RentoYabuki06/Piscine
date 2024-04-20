@@ -6,7 +6,7 @@
 /*   By: yabukirento <yabukirento@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 14:53:55 by yabukirento       #+#    #+#             */
-/*   Updated: 2024/04/19 19:32:53 by yabukirento      ###   ########.fr       */
+/*   Updated: 2024/04/20 16:30:19 by yabukirento      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,8 @@ char	**ft_split(char const *s, char c)
 {
 	char	**ans;
 
+	if (!s)
+		return NULL;
 	ans = (char **)malloc(sizeof(char *) * (ft_count(s, c) + 1));
 	if (!ans || !s)
 		return (NULL);
