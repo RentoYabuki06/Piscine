@@ -6,12 +6,12 @@
 /*   By: ryabuki <ryabuki@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 14:53:55 by yabukirento       #+#    #+#             */
-/*   Updated: 2024/04/20 17:30:17 by ryabuki          ###   ########.fr       */
+/*   Updated: 2024/04/21 18:10:33 by ryabuki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stddef.h>
+#include <stddef.h> 
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
@@ -28,19 +28,11 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	{
 		pdst += len - 1;
 		psrc += len - 1;
-		while (i < len)
-		{
-			*(pdst--) = *(psrc--);
-			i++;
-		}
 	}
-	else
+	while (i < len)
 	{
-		while (i < len)
-		{
-			*(pdst++) = *(psrc++);
-			i++;
-		}
+		*(pdst++) = *(psrc++);
+		i++;
 	}
 	return (dst);
 }
