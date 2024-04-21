@@ -12,3 +12,5 @@ libft/a.out
 libft-unit-tests/
 *.o
 libft.a
+libftTester
+libft-tester-tokyo
