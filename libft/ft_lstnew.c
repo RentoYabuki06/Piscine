@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ryabuki <ryabuki@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/21 17:49:09 by ryabuki           #+#    #+#             */
+/*   Updated: 2024/04/21 17:50:22 by ryabuki          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 t_list	*ft_lstnew(void *content)
 {
-	t_list *new_node;
+	t_list	*new_node;
 
 	new_node = (t_list *)malloc(sizeof(t_list));
 	if (new_node)
@@ -10,5 +22,5 @@ t_list	*ft_lstnew(void *content)
 		new_node->content = content;
 		new_node->next = NULL;
 	}
-	return new_node;
+	return (new_node);
 }

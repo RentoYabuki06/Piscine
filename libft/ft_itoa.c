@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yabukirento <yabukirento@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ryabuki <ryabuki@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 14:53:55 by yabukirento       #+#    #+#             */
-/*   Updated: 2024/04/19 19:32:23 by yabukirento      ###   ########.fr       */
+/*   Updated: 2024/04/21 17:56:49 by ryabuki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ char	*ft_itoa(int n)
 	char	*ans;
 	size_t	len;
 
-	if (n == -2147483648) // 負の最小値の処理
-        return ft_strdup("-2147483648");
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
 	len = ft_numlen(n);
 	ans = (char *)malloc(sizeof(char) * (len + 1));
 	if (!ans)
@@ -50,7 +50,7 @@ char	*ft_itoa(int n)
 	{
 		len--;
 		if (ans[len] == '-')
-			break;
+			break ;
 		ans[len] = n % 10 + '0';
 		n /= 10;
 	}

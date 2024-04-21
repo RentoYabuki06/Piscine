@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yabukirento <yabukirento@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ryabuki <ryabuki@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 14:53:55 by yabukirento       #+#    #+#             */
-/*   Updated: 2024/04/19 16:48:21 by yabukirento      ###   ########.fr       */
+/*   Updated: 2024/04/20 17:25:37 by ryabuki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,15 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t i;
-	size_t len_needle;
+	size_t	i;
+	size_t	len_needle;
+	int		*p;
 
-	if (len == 0) {
-		return (char *)haystack;
-	}
+	if (len == 0)
+		return ((char *)haystack);
 	if (!haystack)
 	{
-		// 意図的にセグメンテーションフォルトを発生させる
-		int *p = NULL;
+		p = NULL;
 		*p = 0;
 	}
 	len_needle = ft_strlen(needle);
@@ -33,7 +32,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	{
 		if (ft_strncmp((haystack + i), needle, len_needle) == 0)
 		{
-			return (char *)(haystack + i);
+			return ((char *)(haystack + i));
 		}
 		i++;
 	}

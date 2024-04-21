@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yabukirento <yabukirento@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ryabuki <ryabuki@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 14:53:55 by yabukirento       #+#    #+#             */
-/*   Updated: 2024/04/19 16:14:32 by yabukirento      ###   ########.fr       */
+/*   Updated: 2024/04/20 17:30:17 by ryabuki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,15 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	unsigned char *pdst;
-	const unsigned char *psrc;
-    size_t i;
+	unsigned char		*pdst;
+	const unsigned char	*psrc;
+	size_t				i;
 
-    i = 0;
+	i = 0;
 	if (dst == NULL && src == NULL)
 		return (NULL);
-    pdst = dst;
-    psrc = src;
+	pdst = dst;
+	psrc = src;
 	if (dst > src && dst < src + len)
 	{
 		pdst += len - 1;
@@ -31,16 +31,16 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		while (i < len)
 		{
 			*(pdst--) = *(psrc--);
-            i++;
+			i++;
 		}
 	}
 	else
-    {
-        while (i < len)
-        {
-            *(pdst++) = *(psrc++);
-            i++;
-        }
-    }
-    return dst;
+	{
+		while (i < len)
+		{
+			*(pdst++) = *(psrc++);
+			i++;
+		}
+	}
+	return (dst);
 }

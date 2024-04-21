@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ryabuki <ryabuki@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/21 17:54:03 by ryabuki           #+#    #+#             */
+/*   Updated: 2024/04/21 17:54:20 by ryabuki          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	t_list *plst;
-	t_list *tmp;
+	t_list	*plst;
+	t_list	*tmp;
 
 	if (!lst || !del || !*lst)
 		return ;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yabukirento <yabukirento@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ryabuki <ryabuki@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 14:53:55 by yabukirento       #+#    #+#             */
-/*   Updated: 2024/04/20 16:30:19 by yabukirento      ###   ########.fr       */
+/*   Updated: 2024/04/20 17:27:30 by ryabuki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ static void	fill_split(char **ans, char const *s, char c, size_t i)
 		while (s[i] == c)
 			i++;
 		if (!s[i])
-			break;
+			break ;
 		len = 0;
 		while (s[i + len] && s[i + len] != c)
 			len++;
@@ -84,7 +84,7 @@ char	**ft_split(char const *s, char c)
 	char	**ans;
 
 	if (!s)
-		return NULL;
+		return (NULL);
 	ans = (char **)malloc(sizeof(char *) * (ft_count(s, c) + 1));
 	if (!ans || !s)
 		return (NULL);
