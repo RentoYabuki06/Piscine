@@ -31,17 +31,21 @@ SRCS = ft_atoi.c \
        ft_strtrim.c \
        ft_substr.c \
        ft_tolower.c \
-       ft_toupper.c \
-       ft_lstadd_back.c \
-       ft_lstadd_front.c \
-       ft_lstclear.c \
-       ft_lstdelone.c \
-       ft_lstiter.c \
-       ft_lstlast.c \
-       ft_lstmap.c \
-       ft_lstnew.c \
-       ft_lstsize.c
+       ft_toupper.c
+
 OBJS = $(SRCS:.c=.o)
+
+SRCBONUS =    ft_lstadd_back.c \
+              ft_lstadd_front.c \
+              ft_lstclear.c \
+              ft_lstdelone.c \
+              ft_lstiter.c \
+              ft_lstlast.c \
+              ft_lstmap.c \
+              ft_lstnew.c \
+              ft_lstsize.c
+
+OBJSBONUS = $(SRCBONUS:.c=.o)
 
 NAME = libft.a
 
@@ -54,10 +58,13 @@ $(NAME): $(OBJS)
 %.o: %.c
 	gcc -Wall -Wextra -Werror -c $< -o $@
 
+bonus: $(NAME)
+	touch bonus
+
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJS) $(OBJSBONUS)
 
 fclean: clean
-	rm -f $(NAME)
+	rm -f $(NAME) bonus
 
 re: fclean all

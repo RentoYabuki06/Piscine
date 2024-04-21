@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ryabuki <ryabuki@student.42.fr>            +#+  +:+       +#+        */
+/*   By: yabukirento <yabukirento@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 14:53:55 by yabukirento       #+#    #+#             */
-/*   Updated: 2024/04/20 17:25:37 by ryabuki          ###   ########.fr       */
+/*   Updated: 2024/04/21 19:40:07 by yabukirento      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,14 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	i;
 	size_t	len_needle;
-	int		*p;
 
-	if (len == 0)
+	if (*haystack == '\0' && *needle == '\0')
 		return ((char *)haystack);
-	if (!haystack)
-	{
-		p = NULL;
-		*p = 0;
-	}
+	if (len < 1)
+		return (0);
 	len_needle = ft_strlen(needle);
 	i = 0;
-	while (i < len && len - i >= len_needle)
+	while (i < len && len - i >= len_needle && *haystack != '\0') 
 	{
 		if (ft_strncmp((haystack + i), needle, len_needle) == 0)
 		{
