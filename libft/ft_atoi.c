@@ -6,7 +6,7 @@
 /*   By: yabukirento <yabukirento@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 14:53:55 by yabukirento       #+#    #+#             */
-/*   Updated: 2024/04/23 16:16:50 by yabukirento      ###   ########.fr       */
+/*   Updated: 2024/04/23 17:28:51 by yabukirento      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	ft_sign(const char *str, int *sign)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while ((str[i] >= 9 && str[i] <= 13) || str[i] == ' ')
@@ -39,7 +39,8 @@ int	ft_atoi(const char *str)
 	i = ft_sign(str, &sign);
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-		if ((ans > (INT64_MAX / 10)) || (ans == (INT64_MAX / 10) && (str[i] >= '8' && str[i] <= '9')))
+		if ((ans > (INT64_MAX / 10))
+			|| (ans == (INT64_MAX / 10) && (str[i] >= '8' && str[i] <= '9')))
 		{
 			if (sign == 1)
 				return (-1);

@@ -6,7 +6,7 @@
 /*   By: yabukirento <yabukirento@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 14:53:55 by yabukirento       #+#    #+#             */
-/*   Updated: 2024/04/23 16:46:36 by yabukirento      ###   ########.fr       */
+/*   Updated: 2024/04/23 17:23:56 by yabukirento      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	if (*needle == '\0')
 		return ((char *)haystack);
 	hay = (char *)haystack;
-	while (i < len && len - i >= len_needle && i < len_haystack) 
+	while (i < len && len - i >= len_needle && i < len_haystack)
 	{
 		if (ft_strncmp((hay + i), needle, len_needle) == 0)
 		{
