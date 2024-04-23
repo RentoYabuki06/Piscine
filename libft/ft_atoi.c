@@ -6,7 +6,7 @@
 /*   By: yabukirento <yabukirento@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 14:53:55 by yabukirento       #+#    #+#             */
-/*   Updated: 2024/04/23 16:09:13 by yabukirento      ###   ########.fr       */
+/*   Updated: 2024/04/23 16:12:02 by yabukirento      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,25 +51,3 @@ int	ft_atoi(const char *str)
 	}
 	return ((int)ans * sign);
 }
-
-// #include <stdio.h>
-// #include <stdlib.h>
-
-// // 自作のft_atoi関数のプロトタイプ宣言
-// int ft_atoi(const char *str);
-
-// int main() {
-//     char str[] = "-9223372036854775809"; // 数値の文字列
-//     char str01[] = "-9223372036854775809"; // 数値の文字列
-
-//     // atoi関数とft_atoi関数を使って文字列を整数に変換
-//     int atoi_value = atoi(str);
-//     int ft_atoi_value = ft_atoi(str01);
-
-//     // 結果を出力
-//     printf("String: %s\n", str);
-//     printf("atoi: %d\n", atoi_value);
-//     printf("ft_atoi: %d\n", ft_atoi_value);
-
-//     return 0;
-// }
