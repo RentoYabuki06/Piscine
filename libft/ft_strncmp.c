@@ -6,7 +6,7 @@
 /*   By: yabukirento <yabukirento@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 14:53:55 by yabukirento       #+#    #+#             */
-/*   Updated: 2024/04/23 15:14:51 by yabukirento      ###   ########.fr       */
+/*   Updated: 2024/04/23 16:48:30 by yabukirento      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,11 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	unsigned char	*ps2;
 
 	i = 0;
+	if (n == 0)
+		return (0);
 	ps1 = (unsigned char *)s1;
 	ps2 = (unsigned char *)s2;
-	if (ps1 == NULL || ps2 == NULL)
+	if (ps1 == NULL && ps2 == NULL)
 		return (0);
 	while (*ps1 != '\0' && *ps2 != '\0' && i < n)
 	{
