@@ -6,7 +6,7 @@
 /*   By: yabukirento <yabukirento@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 14:53:55 by yabukirento       #+#    #+#             */
-/*   Updated: 2024/04/28 11:40:13 by yabukirento      ###   ########.fr       */
+/*   Updated: 2024/04/28 14:44:21 by yabukirento      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,18 +21,16 @@ static size_t	ft_count(char const *s, char c)
 	size_t	i;
 	size_t	count;
 
-	i = 1;
-	count = 1;
-	while (s[i])
+	i = 0;
+	count = 0;
+	while (s[i] != '\0')
 	{
-		if (s[i] == c && s[i - 1] != c)
+		if (s[i] != c && (i == 0 || s[i - 1] == c))
 		{
 			count++;
 		}
 		i++;
 	}
-	if (i > 0 && s[i - 1] == c)
-		count --;
 	return (count);
 }
 
@@ -56,10 +54,13 @@ static char	*ft_strndup(char const *src, size_t n)
 
 static void	ft_allfree(char **ans, size_t j)
 {
-	while (j > 0)
+	size_t	i;
+
+	i = 0;
+	while (i < j)
 	{
-		j--;
-		free(ans[j]);
+		free(ans[i]);
+		i++;
 	}
 	free(ans);
 }
@@ -80,7 +81,7 @@ static void	fill_split(char **ans, char const *s, char c, size_t i)
 		while (s[i + len] && s[i + len] != c)
 			len++;
 		ans[j] = ft_strndup(s + i, len);
-		if (ans[j] == NULL)
+		if (!ans[j])
 		{
 			ft_allfree(ans, j);
 			return ;
