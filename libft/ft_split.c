@@ -6,7 +6,7 @@
 /*   By: yabukirento <yabukirento@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 14:53:55 by yabukirento       #+#    #+#             */
-/*   Updated: 2024/04/23 17:24:51 by yabukirento      ###   ########.fr       */
+/*   Updated: 2024/04/28 10:57:21 by yabukirento      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,16 @@ static char	*ft_strndup(char const *src, size_t n)
 	return (dest);
 }
 
+static void	ft_allfree(char **ans, size_t j)
+{
+	while (j >= 0)
+	{
+		free(ans[j]);
+		j--;
+	}
+	free(ans);
+}
+
 static void	fill_split(char **ans, char const *s, char c, size_t i)
 {
 	size_t	j;
@@ -70,6 +80,10 @@ static void	fill_split(char **ans, char const *s, char c, size_t i)
 		while (s[i + len] && s[i + len] != c)
 			len++;
 		ans[j] = ft_strndup(s + i, len);
+		if (ans[j] == NULL)
+		{
+			ft_allfree(ans, j);
+		}
 		i += len;
 		j++;
 	}
