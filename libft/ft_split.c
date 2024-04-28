@@ -6,7 +6,7 @@
 /*   By: yabukirento <yabukirento@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 14:53:55 by yabukirento       #+#    #+#             */
-/*   Updated: 2024/04/28 11:24:32 by yabukirento      ###   ########.fr       */
+/*   Updated: 2024/04/28 11:40:13 by yabukirento      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static size_t	ft_count(char const *s, char c)
 		}
 		i++;
 	}
-	if (s[i - 1] == c)
+	if (i > 0 && s[i - 1] == c)
 		count --;
 	return (count);
 }
