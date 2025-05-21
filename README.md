@@ -1,82 +1,126 @@
-# Piscine - 42Tokyo 入門プログラム
+# Piscine - 42Tokyo Programming Bootcamp
 
-## 概要
-**Piscine** は42Tokyoの入学試験として行われる4週間の集中プログラムで、プログラミングの基礎を集中的に学ぶ課題です。この課題では、C言語を中心にアルゴリズム、データ構造、システムプログラミングを学びます。
-
----
-
-## プログラムの目的
-1. **プログラミング基礎の習得**：
-   - C言語を通じて基本的な構文やデータ型を理解。
-2. **アルゴリズムの設計と実装**：
-   - 問題解決力と論理的思考力を強化。
-3. **システムプログラミングへの理解**：
-   - メモリ管理やファイル操作を学習。
-4. **ペアプログラミングとコラボレーション**：
-   - チームワークとコードレビューの習慣を形成。
+## Overview
+**Piscine** is a 4-week intensive programming bootcamp that serves as the entrance examination for 42Tokyo. This immersive program focuses on learning the fundamentals of programming, with emphasis on the C language, algorithms, data structures, and system programming.
 
 ---
 
-## 課題内容
-- **基本課題**：
-  - 標準入力、出力の制御。
-  - 条件分岐やループ構文。
-- **アルゴリズム課題**：
-  - ソート、探索、再帰アルゴリズムの実装。
-- **データ構造課題**：
-  - 配列、文字列、リンクリストの操作。
-- **システムコール課題**：
-  - ファイル操作やプロセス管理。
-- **応用課題**：
-  - ミニプロジェクトを通じた実践力強化。
+## Repository Contents
+This repository contains my solutions to the various exercises completed during the 42Tokyo Piscine:
+
+- **C00 - C13**: Progressive C programming modules covering:
+  - Basic syntax and functions
+  - Pointers and memory management
+  - String manipulation
+  - Data structures (arrays, linked lists)
+  - Algorithms (sorting, searching, recursion)
+
+- **Shell00 - Shell01**: Shell scripting exercises
+
+- **Rush Projects**: Team-based weekend projects
+  - RUSH00: Console pattern printing
+  - RUSH01: Logic puzzle solver
+  - RUSH02: Number-to-text converter
+
+- **BSQ**: Final project focused on finding the largest square in a map
+  - BSQ First Day: Initial implementation
+  - BSQ Second Day: Optimized solution
+
+- **libft**: Custom C library implementation with:
+  - String manipulation functions
+  - Memory management functions
+  - Linked list operations
+  - File I/O utilities
 
 ---
 
-## 実装要件
-1. **ライブラリ制限**：
-   - 標準Cライブラリのみ使用可能。
-2. **エラーハンドリング**：
-   - 入力エラーやリソース管理を徹底。
-3. **コード規約の遵守**：
-   - 42のノーム規約に準拠すること。
+## Code Structure
+Each module contains multiple exercises organized by difficulty:
+- **ex00, ex01, ...**: Individual exercises addressing specific programming concepts
+- Each exercise includes implementation files and sometimes test files
+- Comprehensive makefiles for compilation (example)
 
 ---
 
-## 使用方法
-### 必要環境
-- LinuxまたはmacOS。
-- `make` コマンドと `gcc` コンパイラがインストールされていること。
+## Key Functions Implemented
 
-### コンパイル
-```
+### String Operations
+- `ft_putstr`: Display a string
+- `ft_strlen`: Calculate string length
+- `ft_strcmp`: Compare two strings
+
+### Character Operations
+- `ft_putchar`: Output a single character
+- `ft_print_alphabet`: Display the alphabet
+- `ft_print_reverse_alphabet`: Display the alphabet in reverse
+
+### Numeric & Memory Operations
+- `ft_atoi`: Convert ASCII to integer
+- `ft_recursive_power`: Calculate powers using recursion
+- `ft_swap`: Swap the values of two integers
+
+### Data Structures
+- `ft_create_elem`: Create a linked list element
+- `ft_list_size`: Calculate linked list length
+
+### Advanced Algorithms
+- `ft_sort_string_tab`: Sort string array
+- `ft_advanced_sort_string_tab`: Sort with custom comparison
+- `ft_map`: Apply function to each array element
+
+### File I/O
+- `ft_display_file`: Display file contents
+- `ft_cat`: Concatenate and display files
+- `ft_tail`: Display the end of a file
+
+---
+
+## Build Instructions
+Most projects can be compiled using:
+
+```bash
 make
 ```
-### 実行例
+
+Some projects have specific compilation instructions:
+
+```bash
+# For C09/ex00 library
+cd C09/ex00
+./libft_creator.sh
+
+# For specific exercises like ft_display_file
+cd C10/ex00
+make
 ```
-./a.out
-```
 
 ---
 
-## 課題の学びポイント
-- **プログラミング基礎の強化**：
-  基本的な文法から応用技術までを段階的に学習。
-- **アルゴリズムとデータ構造**：
-  効率的なコードの設計と最適化手法。
-- **問題解決スキル**：
-  デバッグやエラーハンドリングの習得。
-- **コラボレーションとレビュー**：
-  チームでの学習とコード品質向上。
+## Coding Standards
+All code adheres to the 42 Norm:
+- Functions limited to 25 lines
+- Maximum 5 functions per file
+- Variable declarations at the beginning of functions
+- No use of external libraries except when explicitly allowed
+- Comprehensive error handling
 
 ---
 
-## 参考リンク
-- [42Tokyo公式ページ](https://42tokyo.jp/)
-- [Piscine課題仕様書](https://github.com/42tokyo/piscine)
-- [C言語リファレンス](https://en.cppreference.com/w/c)
+## Learning Outcomes
+- **C Language Mastery**: From basic syntax to advanced pointers and memory management
+- **Algorithm Design**: Implementation of efficient sorting and searching algorithms
+- **System Programming**: File I/O, process management, and memory allocation
+- **Problem-Solving**: Debugging techniques and error handling strategies
+- **Collaboration**: Peer programming and code review through Rush projects
 
 ---
 
-## ライセンス
-このプログラムは42Tokyoの入学試験として提供され、教育目的で使用されます。再配布や商用利用は制限される場合があります。
+## References
+- [42Tokyo Official Website](https://42tokyo.jp/)
+- [42 Piscine Guidelines](https://github.com/42tokyo/piscine)
+- [C Language Reference](https://en.cppreference.com/w/c)
 
+---
+
+## License
+This code is provided for educational purposes as part of the 42Tokyo admission process. Redistribution and commercial use may be restricted.
